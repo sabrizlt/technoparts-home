@@ -1,7 +1,7 @@
-// Technoparts — home: nav, slideshow, comparse, contatori, parallasse, mappa.
+// Technoparts — home: nav, menu, slider hero con video, comparse, contatori, parallasse, mappa, video.
 (() => {
   const nav = document.getElementById('nav');
-  const onScroll = () => nav.classList.toggle('is-scrolled', scrollY > 10);
+  const onScroll = () => nav.classList.toggle('is-scrolled', scrollY > 50);
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
   // menu mobile
@@ -10,35 +10,51 @@
     const open = nav.classList.toggle('is-open');
     burger.setAttribute('aria-expanded', open);
   });
-  nav.querySelectorAll('.nav__links a').forEach(a => a.addEventListener('click', () => nav.classList.remove('is-open')));
 
-  // slideshow hero: dissolvenza + zoom lento
+  // lingua: apri/chiudi al click (utile su touch)
+  const lang = nav.querySelector('.lang');
+  lang.querySelector('.lang__btn').addEventListener('click', e => { e.stopPropagation(); lang.classList.toggle('is-open'); });
+  document.addEventListener('click', () => lang.classList.remove('is-open'));
+
+  // slider hero: video + 2 foto, testi in dissolvenza
   const slides = [...document.querySelectorAll('.hero__slide')];
+  const texts = [...document.querySelectorAll('.hero__text')];
   const dots = [...document.querySelectorAll('.hero__dots button')];
+  const heroVideo = document.querySelector('.hero__video');
   let i = 0, timer;
   const show = n => {
     i = (n + slides.length) % slides.length;
-    slides.forEach((s, k) => s.classList.toggle('is-active', k === i));
-    dots.forEach((d, k) => d.classList.toggle('is-active', k === i));
+    [slides, texts, dots].forEach(list => list.forEach((el, k) => el.classList.toggle('is-active', k === i)));
+    if (heroVideo) i === 0 ? heroVideo.play().catch(() => {}) : heroVideo.pause();
   };
-  const start = () => { clearInterval(timer); timer = setInterval(() => show(i + 1), 6000); };
+  const start = () => { clearInterval(timer); timer = setInterval(() => show(i + 1), 8000); };
   dots.forEach((d, k) => d.addEventListener('click', () => { show(k); start(); }));
   start();
 
+  // video corporate a tutto schermo
+  const modal = document.getElementById('vmodal');
+  const mVideo = modal.querySelector('video');
+  const close = () => { mVideo.pause(); modal.hidden = true; start(); };
+  document.querySelectorAll('[data-video-open]').forEach(b => b.addEventListener('click', () => {
+    clearInterval(timer); modal.hidden = false; mVideo.currentTime = 0; mVideo.play().catch(() => {});
+  }));
+  modal.querySelector('.vmodal__close').addEventListener('click', close);
+  modal.addEventListener('click', e => { if (e.target === modal) close(); });
+  addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) close(); });
+
   // contatori
   const count = el => {
-    const end = parseFloat(el.dataset.count), dec = String(el.dataset.count).includes('.') ? 1 : 0;
-    const pre = el.dataset.prefix || '', suf = el.dataset.suffix || '', t0 = performance.now();
-    const fmt = v => pre + v.toLocaleString('it-IT', { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf;
+    const end = parseFloat(el.dataset.count), dec = el.dataset.count.includes('.') ? 1 : 0, t0 = performance.now();
+    const fmt = v => v.toLocaleString('it-IT', { minimumFractionDigits: dec, maximumFractionDigits: dec });
     const step = t => {
-      const p = Math.min((t - t0) / 1600, 1), e = 1 - Math.pow(1 - p, 3);
-      el.textContent = fmt(end * e);
+      const p = Math.min((t - t0) / 1600, 1);
+      el.textContent = fmt(end * (1 - Math.pow(1 - p, 3)));
       if (p < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
   };
 
-  // lunghezza delle rotte per l'animazione del tratto
+  // lunghezza delle rotte per disegnarle
   document.querySelectorAll('.routes path').forEach((p, k) => {
     p.style.setProperty('--len', Math.ceil(p.getTotalLength()));
     p.style.transitionDelay = (k * 0.08) + 's';
@@ -47,28 +63,23 @@
   // comparsa allo scroll
   const io = new IntersectionObserver(entries => entries.forEach(en => {
     if (!en.isIntersecting) return;
-    const el = en.target;
-    el.classList.add('is-in');
-    el.querySelectorAll?.('[data-count]').forEach(count);
-    if (el.matches('[data-count]')) count(el);
-    io.unobserve(el);
+    en.target.classList.add('is-in');
+    en.target.querySelectorAll('[data-count]').forEach(count);
+    io.unobserve(en.target);
   }), { threshold: 0.2 });
-  document.querySelectorAll('.reveal, .wipe, .map, .stat').forEach((el, k) => {
-    if (el.classList.contains('reveal')) el.style.transitionDelay = ((k % 4) * 0.07) + 's';
+  document.querySelectorAll('.reveal, .map').forEach((el, k) => {
+    if (el.classList.contains('reveal')) el.style.transitionDelay = ((k % 3) * 0.08) + 's';
     io.observe(el);
   });
 
   // parallasse leggera
   const par = [...document.querySelectorAll('[data-parallax]')];
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const tick = () => {
-      par.forEach(el => {
-        const r = el.parentElement.getBoundingClientRect();
-        if (r.bottom < 0 || r.top > innerHeight) return;
-        const off = (r.top + r.height / 2 - innerHeight / 2) * -0.08;
-        el.style.transform = `translate3d(0,${off}px,0)`;
-      });
-    };
+    const tick = () => par.forEach(el => {
+      const r = el.parentElement.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > innerHeight) return;
+      el.style.transform = `translate3d(0,${(r.top + r.height / 2 - innerHeight / 2) * -0.08}px,0)`;
+    });
     addEventListener('scroll', () => requestAnimationFrame(tick), { passive: true }); tick();
   }
 })();

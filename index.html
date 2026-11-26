@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Technoparts · Ricambi auto originali per importatori e distributori</title>
-<meta name="description" content="Da Ragusa spediamo meccanica, carrozzeria e accessori originali di 27 marchi in oltre 50 paesi, da un magazzino di 15.000 metri quadri.">
+<title>Technoparts · Import/export di ricambi auto originali</title>
+<meta name="description" content="Da oltre 20 anni, ci occupiamo di import/export di ricambi auto originali di meccanica, carrozzeria e accessori dei principali brand automotive.">
 <link rel="icon" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,106 +13,145 @@
 </head>
 <body>
 
+<!-- BARRA ALTA: contatti + login area clienti -->
+<div class="topbar">
+  <div class="wrap topbar__in">
+    <p class="topbar__info">
+      <strong>TECHNOPARTS S.R.L.</strong>
+      <span>Via Paestum 93, 97100 Ragusa (RG) ITALIA</span>
+      <a href="mailto:info@technoparts.it">info@technoparts.it</a>
+      <a href="tel:+390932258875">+39 0932 258875</a>
+    </p>
+    <form class="login" method="post" name="frmAccount" action="https://storetp.technoparts.it" target="_blank">
+      <span class="login__label">Login</span>
+      <input name="User" type="text" placeholder="Nome utente" aria-label="Nome utente" autocomplete="username">
+      <input name="Pwd" type="password" placeholder="Password" aria-label="Password" autocomplete="current-password">
+      <button type="submit" name="bttEnter" value="ACCEDI">Accedi</button>
+    </form>
+  </div>
+</div>
+
 <header class="nav" id="nav">
   <div class="wrap nav__in">
-    <a href="#top" class="nav__logo" aria-label="Technoparts, torna su">
+    <a href="#top" class="nav__logo" aria-label="Technoparts, home">
       <img src="img/logo-tp-amotive-2026.png" alt="Technoparts · Amotive" width="1800" height="223">
     </a>
     <nav class="nav__links" aria-label="Principale">
-      <a href="#ricambi">Ricambi</a>
-      <a href="#marchi">Marchi</a>
-      <a href="#export">Export</a>
-      <a href="#contatti">Contatti</a>
+      <div class="dd">
+        <a href="https://www.technoparts.it/it/import-export-ricambi-originali-auto/">Ricambi originali</a>
+        <div class="dd__menu">
+          <a href="https://www.technoparts.it/it/import-export-ricambi-originali-auto/import-export-ricambi-auto-originali-di-meccanica/">Meccanica</a>
+          <a href="https://www.technoparts.it/it/import-export-ricambi-originali-auto/import-export-ricambi-originali-di-carrozzeria/">Carrozzeria</a>
+          <a href="https://www.technoparts.it/it/import-export-ricambi-originali-auto/import-export-accessori-auto-originali/">Accessori</a>
+        </div>
+      </div>
+      <div class="dd">
+        <a href="https://www.technoparts.it/it/technoparts-chi-siamo/">Azienda</a>
+        <div class="dd__menu">
+          <a href="https://www.technoparts.it/it/technoparts-chi-siamo/i-nostri-valori/">Mission, Vision, Codice etico</a>
+          <a href="https://www.technoparts.it/it/technoparts-chi-siamo/la-nostra-storia/">La nostra storia</a>
+          <a href="https://www.technoparts.it/it/technoparts-chi-siamo/il-nostro-team/">Team</a>
+          <a href="https://www.technoparts.it/it/technoparts-chi-siamo/lavora-con-noi/">Lavora con noi</a>
+        </div>
+      </div>
+      <a href="https://www.technoparts.it/it/agenti/">Diventa un agente</a>
+      <a href="https://www.technoparts.it/it/contatti/">Contatti</a>
     </nav>
-    <a href="#contatti" class="btn btn--red btn--sm">Area rivenditori</a>
+    <div class="lang dd">
+      <button class="lang__btn" aria-label="Lingua">IT <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+      <div class="dd__menu dd__menu--right">
+        <a href="https://www.technoparts.it/it/" class="is-current">Italiano</a>
+        <a href="https://www.technoparts.it/en/">English</a>
+        <a href="https://www.technoparts.it/fr/">Français</a>
+        <a href="https://www.technoparts.it/es/">Español</a>
+        <a href="https://www.technoparts.it/zh/">中文 (中国)</a>
+      </div>
+    </div>
+    <a href="https://www.technoparts.it/it/diventa-cliente/" class="btn btn--red btn--sm nav__cta">Diventa cliente</a>
     <button class="nav__burger" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span></button>
   </div>
 </header>
 
 <main id="top">
 
-  <!-- HERO con slideshow a dissolvenza + zoom lento -->
+  <!-- HERO: video corporate + slide con dissolvenza -->
   <section class="hero">
     <div class="hero__slides" aria-hidden="true">
-      <div class="hero__slide is-active" style="background-image:url(img/hero-carrozzeria.jpg)"></div>
-      <div class="hero__slide" style="background-image:url(img/magazzino.jpg)"></div>
+      <div class="hero__slide is-active">
+        <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="img/video-poster.jpg">
+          <source src="img/hero-loop.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero__slide" style="background-image:url(img/hero-carrozzeria.jpg)"></div>
       <div class="hero__slide" style="background-image:url(img/groupage.jpg)"></div>
     </div>
     <div class="hero__shade"></div>
+
     <div class="wrap hero__in">
-      <p class="eyebrow eyebrow--light reveal">Your partner for genuine parts</p>
-      <h1 class="reveal">Ricambi auto originali.<br>Un solo fornitore, 27 marchi.</h1>
-      <p class="hero__lead reveal">Da oltre 20 anni spediamo da Ragusa meccanica, carrozzeria e accessori originali a importatori e distributori in tutto il mondo. Oltre 20.000 codici fast moving sempre a magazzino.</p>
-      <div class="hero__cta reveal">
-        <a href="#contatti" class="btn btn--red">Diventa cliente</a>
-        <a href="#ricambi" class="btn btn--ghost">Scopri i ricambi</a>
+      <div class="hero__texts">
+        <div class="hero__text is-active">
+          <p class="eyebrow eyebrow--light">Your partner for genuine parts</p>
+          <h1>Specialisti nei ricambi auto originali</h1>
+          <p class="hero__lead">Da oltre 20 anni, ci occupiamo di import/export di ricambi auto originali di meccanica, carrozzeria e accessori dei principali brand automotive.</p>
+          <p class="hero__sub">Scopri perché più di 500 clienti ci hanno già scelto.</p>
+          <div class="hero__cta">
+            <a href="https://www.technoparts.it/it/technoparts-chi-siamo/" class="btn btn--red">Scopri di più</a>
+            <button class="btn btn--ghost" data-video-open><svg width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><path d="M0 0l12 7-12 7z" fill="currentColor"/></svg> Guarda il video</button>
+          </div>
+        </div>
+        <div class="hero__text">
+          <p class="eyebrow eyebrow--light">Carrozzeria</p>
+          <h1>Ricambi originali di carrozzeria</h1>
+          <p class="hero__lead">Ampia scelta di ricambi auto di carrozzeria originali dei principali brand di settore.</p>
+          <div class="hero__cta">
+            <a href="https://www.technoparts.it/it/import-export-ricambi-originali-auto/import-export-ricambi-originali-di-carrozzeria/" class="btn btn--red">Scopri di più</a>
+          </div>
+        </div>
+        <div class="hero__text">
+          <p class="eyebrow eyebrow--light">Groupage</p>
+          <h1>Centralizza i tuoi ordini su un unico fornitore</h1>
+          <p class="hero__lead">Grazie all’ampia disponibilità di articoli centralizzi i tuoi ordini su un unico fornitore, risparmiando tempi e costi.</p>
+          <div class="hero__cta">
+            <a href="https://www.technoparts.it/it/diventa-cliente/" class="btn btn--red">Scopri di più</a>
+          </div>
+        </div>
       </div>
-      <div class="hero__dots" role="tablist" aria-label="Immagini">
-        <button class="is-active" aria-label="Immagine 1"></button>
-        <button aria-label="Immagine 2"></button>
-        <button aria-label="Immagine 3"></button>
+      <div class="hero__dots" aria-label="Slide">
+        <button class="is-active" aria-label="Slide 1"></button>
+        <button aria-label="Slide 2"></button>
+        <button aria-label="Slide 3"></button>
       </div>
     </div>
   </section>
 
-  <!-- NUMERI -->
-  <section class="stats">
-    <div class="wrap stats__grid">
-      <div class="stat reveal"><strong data-count="15000">15.000</strong><span>m² di magazzino</span></div>
-      <div class="stat reveal"><strong data-count="2.5" data-suffix=" mln">2,5 mln</strong><span>pezzi venduti ogni anno</span></div>
-      <div class="stat reveal"><strong data-count="27">27</strong><span>marchi, tutti originali</span></div>
-      <div class="stat reveal"><strong data-count="50" data-prefix="+">+50</strong><span>paesi serviti</span></div>
-    </div>
-  </section>
-
-  <!-- RICAMBI -->
+  <!-- PARTNER + FAMIGLIE DI RICAMBI -->
   <section class="section" id="ricambi">
     <div class="wrap">
-      <div class="head reveal">
-        <p class="eyebrow">Il catalogo</p>
-        <h2>Tre famiglie di ricambi, un solo magazzino</h2>
-        <p class="head__lead">Ogni pezzo arriva dalla rete ufficiale del marchio e parte con il suo codice originale.</p>
+      <div class="intro">
+        <div class="reveal">
+          <p class="eyebrow">Chi siamo</p>
+          <h2>Il tuo partner nell’import/export di ricambi auto originali</h2>
+        </div>
+        <div class="intro__text reveal">
+          <p>Siamo una consolidata <strong>trading company export-oriented</strong> specializzata nell’import/export di ricambi auto originali di meccanica, carrozzeria e accessori dei più prestigiosi marchi di settore.</p>
+          <p>Con un magazzino di 15.000 metri quadri, 2,5 milioni di pezzi venduti all’anno, oltre 60 collaboratori e 20 anni di esperienza nel settore, siamo sempre al fianco di importatori, trader, distributori e specialisti, per offrirgli la più ampia scelta di ricambi auto originali.</p>
+        </div>
       </div>
-      <div class="cards">
-        <article class="card reveal">
-          <div class="card__img"><img src="img/meccanica.jpg" alt="Ricambi di meccanica" loading="lazy"></div>
-          <div class="card__body">
-            <span class="card__num">01</span>
-            <h3>Meccanica</h3>
-            <p>Motore, cambio, freni, filtri e sospensioni, con i codici più richiesti pronti a partire.</p>
-          </div>
-        </article>
-        <article class="card reveal">
-          <div class="card__img"><img src="img/carrozzeria.jpg" alt="Ricambi di carrozzeria" loading="lazy"></div>
-          <div class="card__body">
-            <span class="card__num">02</span>
-            <h3>Carrozzeria</h3>
-            <p>Fari, paraurti, specchi, lamierati e vetri originali dei principali marchi europei e asiatici.</p>
-          </div>
-        </article>
-        <article class="card reveal">
-          <div class="card__img"><img src="img/accessori.jpg" alt="Accessori originali" loading="lazy"></div>
-          <div class="card__body">
-            <span class="card__num">03</span>
-            <h3>Accessori</h3>
-            <p>Audio, cerchi, tappeti e kit di serie, gli stessi che la casa monta in fabbrica.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
 
-  <!-- MAGAZZINO: immagine con parallasse e apertura a tendina -->
-  <section class="split">
-    <div class="split__img wipe"><img src="img/magazzino.jpg" alt="Il magazzino Technoparts a Ragusa" loading="lazy" data-parallax></div>
-    <div class="split__text">
-      <p class="eyebrow eyebrow--light reveal">Il magazzino</p>
-      <h2 class="reveal">15.000 m² a Ragusa, dove ogni ordine viene preparato, controllato e imballato.</h2>
-      <ul class="checks reveal">
-        <li>Oltre 20.000 codici fast moving sempre disponibili</li>
-        <li>Controllo qualità su ogni collo in uscita</li>
-        <li>Ordini raggruppati, una sola spedizione</li>
-      </ul>
+      <div class="cards">
+        <a class="card reveal" href="https://www.technoparts.it/it/import-export-ricambi-originali-auto/import-export-ricambi-auto-originali-di-meccanica/">
+          <div class="card__img"><img src="img/meccanica.jpg" alt="Ricambi originali di meccanica" loading="lazy"></div>
+          <div class="card__body"><span class="card__num">01</span><h3>Meccanica</h3><span class="card__go" aria-hidden="true">→</span></div>
+        </a>
+        <a class="card reveal" href="https://www.technoparts.it/it/import-export-ricambi-originali-auto/import-export-ricambi-originali-di-carrozzeria/">
+          <div class="card__img"><img src="img/carrozzeria.jpg" alt="Ricambi originali di carrozzeria" loading="lazy"></div>
+          <div class="card__body"><span class="card__num">02</span><h3>Carrozzeria</h3><span class="card__go" aria-hidden="true">→</span></div>
+        </a>
+        <a class="card reveal" href="https://www.technoparts.it/it/import-export-ricambi-originali-auto/import-export-accessori-auto-originali/">
+          <div class="card__img"><img src="img/accessori.jpg" alt="Accessori auto originali" loading="lazy"></div>
+          <div class="card__body"><span class="card__num">03</span><h3>Accessori</h3><span class="card__go" aria-hidden="true">→</span></div>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -120,39 +159,47 @@
   <section class="section section--alt" id="marchi">
     <div class="wrap">
       <div class="head reveal">
-        <p class="eyebrow">I marchi</p>
-        <h2>Un solo fornitore per 27 marchi</h2>
-        <p class="head__lead">Un ordine, una spedizione.</p>
+        <p class="eyebrow">Marchi</p>
+        <h2>Ricambi originali dei principali brand del mondo dell’auto</h2>
       </div>
-      <div class="brands">
-        <div class="brand reveal"><h4>FCA</h4><p>Fiat, Alfa Romeo, Lancia, Abarth, Jeep, Chrysler, Maserati</p></div>
-        <div class="brand reveal"><h4>Stellantis ex PSA</h4><p>Peugeot, Citroën, DS, Opel</p></div>
-        <div class="brand reveal"><h4>Gruppo Volkswagen</h4><p>Volkswagen, Audi, Skoda, Seat, Porsche, Lamborghini</p></div>
-        <div class="brand reveal"><h4>Germania</h4><p>BMW, Mini, Mercedes, Smart</p></div>
-        <div class="brand reveal"><h4>Europa</h4><p>Renault, Dacia, Ford, Volvo, Jaguar, Land Rover</p></div>
-        <div class="brand reveal"><h4>Asia</h4><p>Toyota, Lexus, Nissan, Infiniti, Hyundai, Kia, Mitsubishi, SsangYong</p></div>
+      <div class="groups reveal">
+        <div class="group"><h4>FCA Group</h4><p>Fiat, Alfa Romeo, Lancia, Abarth, Jeep, Chrysler</p></div>
+        <div class="group"><h4>PSA</h4><p>Peugeot, Citroën, DS, Opel</p></div>
       </div>
+      <ul class="brands">
+        <li>Volkswagen</li><li>Audi</li><li>Skoda</li><li>Seat</li><li>VIC</li><li>BMW</li>
+        <li>Mini</li><li>Mercedes</li><li>Smart</li><li>Hyundai</li><li>Jaguar</li><li>Land Rover</li>
+        <li>Renault</li><li>Dacia</li><li>Ford</li><li>Nissan-Infiniti</li><li>Toyota</li><li>Lexus</li>
+        <li>Porsche</li><li>Volvo</li><li>Mitsubishi</li><li>SsangYong</li><li>Kia</li><li>Maserati</li>
+        <li>Lamborghini</li>
+      </ul>
     </div>
   </section>
 
-  <!-- EXPORT: mappa pulita con rotte animate da Ragusa -->
+  <!-- NUMERI con foto del magazzino -->
+  <section class="numbers">
+    <div class="numbers__bg" style="background-image:url(img/magazzino.jpg)" data-parallax></div>
+    <div class="wrap numbers__grid">
+      <div class="num reveal"><img src="img/ico-magazzino.svg" alt="" class="num__ico"><strong>Magazzino da <span data-count="15000">15.000</span> metri quadri</strong></div>
+      <div class="num reveal"><img src="img/ico-brand-1.svg" alt="" class="num__ico"><strong><span data-count="27">27</span> marchi commercializzati</strong></div>
+      <div class="num reveal"><img src="img/ico-pezzi-venduti.svg" alt="" class="num__ico"><strong><span data-count="2.5">2,5</span> milioni di pezzi venduti</strong></div>
+      <div class="num reveal"><img src="img/ico-codici-fast-moving.svg" alt="" class="num__ico"><strong>+<span data-count="20000">20.000</span> codici fast moving in stock</strong></div>
+      <div class="num reveal"><img src="img/ico-20-anni.svg" alt="" class="num__ico"><strong>+<span data-count="20">20</span> anni sul mercato</strong></div>
+      <div class="num reveal"><img src="img/ico-collaboratori.svg" alt="" class="num__ico"><strong>oltre <span data-count="60">60</span> collaboratori</strong></div>
+    </div>
+  </section>
+
+  <!-- EXPORT: mappa pulita con rotte da Ragusa -->
   <section class="section" id="export">
     <div class="wrap export">
-      <div class="export__text">
-        <div class="reveal">
-          <p class="eyebrow">Export</p>
-          <h2>Da Ragusa a oltre 50 paesi</h2>
-          <p class="head__lead">Lavoriamo con importatori, trader, distributori e specialisti. Raggruppiamo gli ordini e la nostra logistica li porta a destinazione in tempi rapidi.</p>
-        </div>
-        <ul class="regions reveal">
-          <li><strong>Europa</strong><span>UE, Regno Unito, Balcani</span></li>
-          <li><strong>Africa</strong><span>Nord, Ovest e Sud</span></li>
-          <li><strong>Medio Oriente</strong><span>Golfo e Levante</span></li>
-          <li><strong>Americhe e Asia</strong><span>Su richiesta, via groupage</span></li>
-        </ul>
+      <div class="export__text reveal">
+        <p class="eyebrow">Export</p>
+        <h2>Oltre 50 paesi raggiunti</h2>
+        <p class="head__lead">La nostra organizzazione logistica ci permette di raggiungere in tempi rapidi oltre 50 paesi nel mondo.</p>
+        <a href="https://www.technoparts.it/it/diventa-cliente/" class="btn btn--red">Diventa cliente</a>
       </div>
       <figure class="map reveal" id="map">
-        <img src="img/mappa.svg" alt="Mappa del mondo con le rotte di spedizione da Ragusa" class="map__base">
+        <img src="img/mappa.svg" alt="Mappa del mondo con le spedizioni da Ragusa" class="map__base">
         <svg class="map__routes" viewBox="15 7 970 432" aria-hidden="true">
           <g class="routes">
             <path d="M536,118 Q516,90 496,79"/>
@@ -181,45 +228,62 @@
     </div>
   </section>
 
-  <!-- CONTATTI -->
-  <section class="cta" id="contatti">
-    <div class="cta__bg" style="background-image:url(img/groupage.jpg)" data-parallax></div>
-    <div class="wrap cta__in">
-      <div class="cta__text reveal">
-        <p class="eyebrow eyebrow--light">Area rivenditori</p>
-        <h2>Apri un conto da rivenditore</h2>
-        <p>Dicci chi sei e cosa compri: ti rispondiamo con listino e condizioni entro due giorni lavorativi.</p>
-      </div>
-      <form class="form reveal" onsubmit="event.preventDefault();this.querySelector('.form__ok').hidden=false;this.reset()">
-        <label>Azienda<input name="azienda" required placeholder="Nome dell'azienda"></label>
-        <label>Nome e cognome<input name="nome" required placeholder="Mario Rossi"></label>
-        <label>Email<input type="email" name="email" required placeholder="nome@azienda.it"></label>
-        <label>Paese<input name="paese" required placeholder="Italia"></label>
-        <button class="btn btn--red" type="submit">Invia richiesta</button>
-        <p class="form__ok" hidden>Grazie, ti ricontattiamo a breve.</p>
-      </form>
-    </div>
-  </section>
-
 </main>
 
 <footer class="footer">
   <div class="wrap footer__in">
-    <div>
+    <div class="footer__brand">
       <img src="img/logo-tp-amotive-2026.png" alt="Technoparts · Amotive" class="footer__logo" width="1800" height="223">
-      <p class="footer__muted">Ricambi auto originali all'ingrosso dal 2003.</p>
+      <p>Technoparts Import Export Ricambi Auto s.r.l. unipersonale<br>Via Paestum 93<br>97100 Ragusa (RG)<br>ITALIA</p>
     </div>
     <div>
-      <h5>Sede</h5>
-      <p class="footer__muted">Via Paestum<br>Ragusa, Italia</p>
+      <h5>Contatti</h5>
+      <p><a href="mailto:info@technoparts.it">info@technoparts.it</a><br>
+      <a href="tel:+390932258875">Tel. +39 0932 258875</a><br>
+      PEC: technoparts@ecert.it</p>
+      <p class="footer__legal">P. IVA 01062790884<br>C.C.I.A.A. Ragusa n. 91801<br>Meccanografico RG0052833<br>SDI: SUBM70N</p>
     </div>
     <div>
-      <h5>Il sito</h5>
-      <p class="footer__links"><a href="#ricambi">Ricambi</a><a href="#marchi">Marchi</a><a href="#export">Export</a><a href="#contatti">Contatti</a></p>
+      <h5>Ricambi originali</h5>
+      <p class="footer__links">
+        <a href="https://www.technoparts.it/it/import-export-ricambi-originali-auto/import-export-ricambi-auto-originali-di-meccanica/">Meccanica</a>
+        <a href="https://www.technoparts.it/it/import-export-ricambi-originali-auto/import-export-ricambi-originali-di-carrozzeria/">Carrozzeria</a>
+        <a href="https://www.technoparts.it/it/import-export-ricambi-originali-auto/import-export-accessori-auto-originali/">Accessori</a>
+        <a href="https://www.technoparts.it/it/diventa-cliente/">Diventa cliente</a>
+      </p>
+    </div>
+    <div>
+      <h5>Azienda</h5>
+      <p class="footer__links">
+        <a href="https://www.technoparts.it/it/technoparts-chi-siamo/i-nostri-valori/">Mission, Vision, Codice etico</a>
+        <a href="https://www.technoparts.it/it/technoparts-chi-siamo/la-nostra-storia/">Storia</a>
+        <a href="https://www.technoparts.it/it/technoparts-chi-siamo/il-nostro-team/">Team</a>
+        <a href="https://www.technoparts.it/it/technoparts-chi-siamo/lavora-con-noi/">Lavora con noi</a>
+      </p>
+    </div>
+    <div class="footer__qr">
+      <img src="img/qr.png" alt="QR code Technoparts Import Export" width="96" height="96">
     </div>
   </div>
-  <div class="wrap footer__bottom">© 2026 Technoparts Srl · P.IVA 00000000000</div>
+
+  <div class="wrap footer__bandi">
+    <img src="img/footer_bando.jpg" alt="Voucher per l'Internazionalizzazione Decreto MISE 17 luglio 2017 - II° Bando. Unione Europea, PON Imprese e Competitività, Ministero dello Sviluppo Economico" loading="lazy">
+    <img src="img/footer_bando2.jpg" alt="Progetto cofinanziato dall'Unione Europea, PO FESR Sicilia 2014/2020, Regione Siciliana" loading="lazy">
+  </div>
+
+  <div class="wrap footer__bottom">
+    <span>© 2026 Technoparts S.r.l.</span>
+    <span><a href="https://www.technoparts.it/it/privacy-policy/">Privacy Policy</a><a href="https://www.technoparts.it/it/cookie-policy/">Cookie Policy</a></span>
+  </div>
 </footer>
+
+<!-- Video corporate a tutto schermo -->
+<div class="vmodal" id="vmodal" hidden>
+  <button class="vmodal__close" aria-label="Chiudi il video">×</button>
+  <video controls playsinline preload="none" poster="img/video-poster.jpg">
+    <source src="img/video-corporate.mp4" type="video/mp4">
+  </video>
+</div>
 
 <script src="main.js"></script>
 </body>
