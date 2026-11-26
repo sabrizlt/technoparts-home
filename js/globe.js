@@ -1,15 +1,18 @@
-// Mezzo globo con le rotte da Ragusa: rotazione lenta continua + flussi sulle rotte.
+// Globo intero con le rotte da Ragusa: rotazione lenta continua + flussi sulle rotte.
 (() => {
   const host = document.getElementById('globe');
   if (!host || !window.d3 || !window.topojson) return;
   const NS = 'http://www.w3.org/2000/svg';
-  const S = 800, R = 392;                               // viewBox quadrato, raggio del globo
+  const S = 800, R = 380;                               // viewBox quadrato, raggio del globo
   const hub = [14.73, 36.93];                           // Ragusa
   const dests = [
     [-3.70, 40.42], [2.35, 48.86], [-0.13, 51.51], [13.40, 52.52], [21.01, 52.23],
     [26.10, 44.43], [23.73, 37.98], [28.98, 41.01], [-7.59, 33.57], [3.06, 36.75],
     [10.18, 36.81], [13.19, 32.89], [31.24, 30.04], [-17.45, 14.69], [46.68, 24.71],
-    [55.27, 25.20], [35.93, 31.95], [44.37, 33.31], [37.62, 55.75], [32.85, 39.93]
+    [55.27, 25.20], [35.93, 31.95], [44.37, 33.31], [37.62, 55.75], [32.85, 39.93],
+    // Americhe
+    [-74.01, 40.71], [-79.38, 43.65], [-80.19, 25.76], [-99.13, 19.43], [-46.63, -23.55],
+    [-58.38, -34.60], [-74.07, 4.71], [-66.90, 10.48], [3.38, 6.52], [36.82, -1.29]
   ];
 
   const topo = window.WORLD;
@@ -59,7 +62,7 @@
   const itaGeo = { type: 'FeatureCollection', features: italy };
 
   const draw = lon => {
-    proj.rotate([-lon, -28]);
+    proj.rotate([-lon, -22]);
     $('.g-sea').setAttribute('d', path(sphere));
     $('.g-rim').setAttribute('d', path(sphere));
     $('.g-grat').setAttribute('d', path(grat));
@@ -81,10 +84,10 @@
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
   let running = false, t0 = performance.now();
   const loop = t => {
-    draw(16 + Math.sin((t - t0) / 9000) * 14);
+    draw(-18 + Math.sin((t - t0) / 11000) * 34);   // da Medio Oriente fino alle Americhe
     if (running) requestAnimationFrame(loop);
   };
-  draw(16);
+  draw(-5);
   if (still) return;
   new IntersectionObserver(([e]) => {
     if (e.isIntersecting && !running) { running = true; requestAnimationFrame(loop); }

@@ -177,11 +177,11 @@ h3{font-size:1.3rem}
 .brand-list li:hover{border-color:var(--red);color:var(--red);padding-left:24px}
 
 /* export: mezzo globo */
-.world{position:relative;overflow:hidden;background:var(--g-50);padding-top:120px}
+.world{position:relative;overflow:hidden;background:var(--g-50);padding:110px 0}
 .world__in{display:grid;grid-template-columns:1fr 1.15fr;gap:48px;align-items:center}
-.world__text{padding-bottom:120px}
+.world__text{padding-bottom:0}
 .world__text .btn{margin-top:32px}
-.world__globe{align-self:end;aspect-ratio:1/.62;overflow:hidden;margin-bottom:-1px}
+.world__globe{align-self:center;width:100%;max-width:600px;justify-self:center;filter:drop-shadow(0 30px 50px rgba(0,0,0,.08))}
 .world__globe svg{display:block;width:100%;height:auto}
 .g-sea{stroke:none}
 .g-grat{fill:none;stroke:#d9d6d1;stroke-width:.6}
@@ -233,7 +233,7 @@ h3{font-size:1.3rem}
   .cards,.numbers__grid{grid-template-columns:1fr}.card{aspect-ratio:4/3}
   .footer__in{grid-template-columns:1fr 1fr}
   .footer__bottom{flex-direction:column}
-  .world{padding-top:80px}.brand-list{grid-template-columns:1fr 1fr}
+  .world{padding:80px 0}.brand-list{grid-template-columns:1fr 1fr}
   .vmodal{padding:12px}
 }
 @media (prefers-reduced-motion:reduce){
