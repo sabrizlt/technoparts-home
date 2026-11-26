@@ -8,7 +8,7 @@
 <link rel="icon" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -74,7 +74,7 @@
 
 <main id="top">
 
-  <!-- HERO: video corporate + slide con dissolvenza -->
+  <!-- HERO: video corporate fisso, cambiano solo i testi -->
   <section class="hero">
     <div class="hero__slides" aria-hidden="true">
       <div class="hero__slide is-active">
@@ -82,8 +82,6 @@
           <source src="img/hero-loop.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="hero__slide" style="background-image:url(img/hero-carrozzeria.jpg)"></div>
-      <div class="hero__slide" style="background-image:url(img/groupage.jpg)"></div>
     </div>
     <div class="hero__shade"></div>
 
@@ -156,24 +154,19 @@
   </section>
 
   <!-- MARCHI -->
-  <section class="section section--alt" id="marchi">
-    <div class="wrap">
-      <div class="head reveal">
+  <section class="section brands-sec" id="marchi">
+    <div class="wrap brands-head">
+      <div class="reveal">
         <p class="eyebrow">Marchi</p>
         <h2>Ricambi originali dei principali brand del mondo dell’auto</h2>
       </div>
       <div class="groups reveal">
-        <div class="group"><h4>FCA Group</h4><p>Fiat, Alfa Romeo, Lancia, Abarth, Jeep, Chrysler</p></div>
-        <div class="group"><h4>PSA</h4><p>Peugeot, Citroën, DS, Opel</p></div>
+        <div class="group"><span class="group__n">FCA Group</span><p>Fiat, Alfa Romeo, Lancia, Abarth, Jeep, Chrysler</p></div>
+        <div class="group"><span class="group__n">PSA</span><p>Peugeot, Citroën, DS, Opel</p></div>
       </div>
-      <ul class="brands">
-        <li>Volkswagen</li><li>Audi</li><li>Skoda</li><li>Seat</li><li>VIC</li><li>BMW</li>
-        <li>Mini</li><li>Mercedes</li><li>Smart</li><li>Hyundai</li><li>Jaguar</li><li>Land Rover</li>
-        <li>Renault</li><li>Dacia</li><li>Ford</li><li>Nissan-Infiniti</li><li>Toyota</li><li>Lexus</li>
-        <li>Porsche</li><li>Volvo</li><li>Mitsubishi</li><li>SsangYong</li><li>Kia</li><li>Maserati</li>
-        <li>Lamborghini</li>
-      </ul>
     </div>
+    <div class="marquee reveal" aria-label="Marchi commercializzati"><ul class="marquee__track"><li>Volkswagen</li><li>Audi</li><li>Skoda</li><li>Seat</li><li>VIC</li><li>BMW</li><li>Mini</li><li>Mercedes</li><li>Smart</li><li>Hyundai</li><li>Jaguar</li><li>Land Rover</li><li>Renault</li></ul><ul class="marquee__track" aria-hidden="true"><li>Volkswagen</li><li>Audi</li><li>Skoda</li><li>Seat</li><li>VIC</li><li>BMW</li><li>Mini</li><li>Mercedes</li><li>Smart</li><li>Hyundai</li><li>Jaguar</li><li>Land Rover</li><li>Renault</li></ul></div>
+    <div class="marquee marquee--rev reveal" aria-hidden="true"><ul class="marquee__track"><li>Dacia</li><li>Ford</li><li>Nissan-Infiniti</li><li>Toyota</li><li>Lexus</li><li>Porsche</li><li>Volvo</li><li>Mitsubishi</li><li>SsangYong</li><li>Kia</li><li>Maserati</li><li>Lamborghini</li></ul><ul class="marquee__track" aria-hidden="true"><li>Dacia</li><li>Ford</li><li>Nissan-Infiniti</li><li>Toyota</li><li>Lexus</li><li>Porsche</li><li>Volvo</li><li>Mitsubishi</li><li>SsangYong</li><li>Kia</li><li>Maserati</li><li>Lamborghini</li></ul></div>
   </section>
 
   <!-- NUMERI con foto del magazzino -->
@@ -189,18 +182,11 @@
     </div>
   </section>
 
-  <!-- EXPORT: mappa pulita con rotte da Ragusa -->
-  <section class="section" id="export">
-    <div class="wrap export">
-      <div class="export__text reveal">
-        <p class="eyebrow">Export</p>
-        <h2>Oltre 50 paesi raggiunti</h2>
-        <p class="head__lead">La nostra organizzazione logistica ci permette di raggiungere in tempi rapidi oltre 50 paesi nel mondo.</p>
-        <a href="https://www.technoparts.it/it/diventa-cliente/" class="btn btn--red">Diventa cliente</a>
-      </div>
-      <figure class="map reveal" id="map">
-        <img src="img/mappa.svg" alt="Mappa del mondo con le spedizioni da Ragusa" class="map__base">
-        <svg class="map__routes" viewBox="15 7 970 432" aria-hidden="true">
+  <!-- EXPORT: mappa a tutta fascia in trasparenza -->
+  <section class="world" id="export">
+    <div class="world__map map" id="map" aria-hidden="true">
+      <img src="img/mappa.svg" alt="" class="map__base">
+      <svg class="map__routes" viewBox="15 7 970 432" aria-hidden="true">
           <g class="routes">
             <path d="M536,118 Q516,90 496,79"/>
             <path d="M536,118 Q575,80 597,68"/>
@@ -223,8 +209,15 @@
           <circle class="hub__pulse" cx="536" cy="118" r="5"/>
           <circle class="hub" cx="536" cy="118" r="4"/>
         </svg>
-        <figcaption><span class="dot"></span> Ragusa, sede e magazzino</figcaption>
-      </figure>
+    </div>
+    <div class="wrap world__in">
+      <div class="world__text reveal">
+        <p class="eyebrow">Export</p>
+        <h2>Oltre 50 paesi raggiunti</h2>
+        <p class="head__lead">La nostra organizzazione logistica ci permette di raggiungere in tempi rapidi oltre 50 paesi nel mondo.</p>
+        <a href="https://www.technoparts.it/it/diventa-cliente/" class="btn btn--red">Diventa cliente</a>
+        <p class="world__hub"><span class="dot"></span> Ragusa, sede e magazzino</p>
+      </div>
     </div>
   </section>
 

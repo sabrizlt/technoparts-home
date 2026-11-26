@@ -16,16 +16,14 @@
   lang.querySelector('.lang__btn').addEventListener('click', e => { e.stopPropagation(); lang.classList.toggle('is-open'); });
   document.addEventListener('click', () => lang.classList.remove('is-open'));
 
-  // slider hero: video + 2 foto, testi in dissolvenza
-  const slides = [...document.querySelectorAll('.hero__slide')];
+  // hero: il video resta fisso, ruotano solo i testi
   const texts = [...document.querySelectorAll('.hero__text')];
   const dots = [...document.querySelectorAll('.hero__dots button')];
   const heroVideo = document.querySelector('.hero__video');
   let i = 0, timer;
   const show = n => {
-    i = (n + slides.length) % slides.length;
-    [slides, texts, dots].forEach(list => list.forEach((el, k) => el.classList.toggle('is-active', k === i)));
-    if (heroVideo) i === 0 ? heroVideo.play().catch(() => {}) : heroVideo.pause();
+    i = (n + texts.length) % texts.length;
+    [texts, dots].forEach(list => list.forEach((el, k) => el.classList.toggle('is-active', k === i)));
   };
   const start = () => { clearInterval(timer); timer = setInterval(() => show(i + 1), 8000); };
   dots.forEach((d, k) => d.addEventListener('click', () => { show(k); start(); }));
@@ -34,9 +32,9 @@
   // video corporate a tutto schermo
   const modal = document.getElementById('vmodal');
   const mVideo = modal.querySelector('video');
-  const close = () => { mVideo.pause(); modal.hidden = true; start(); };
+  const close = () => { mVideo.pause(); modal.hidden = true; heroVideo.play().catch(() => {}); start(); };
   document.querySelectorAll('[data-video-open]').forEach(b => b.addEventListener('click', () => {
-    clearInterval(timer); modal.hidden = false; mVideo.currentTime = 0; mVideo.play().catch(() => {});
+    clearInterval(timer); heroVideo.pause(); modal.hidden = false; mVideo.currentTime = 0; mVideo.play().catch(() => {});
   }));
   modal.querySelector('.vmodal__close').addEventListener('click', close);
   modal.addEventListener('click', e => { if (e.target === modal) close(); });
@@ -60,13 +58,17 @@
     p.style.transitionDelay = (k * 0.08) + 's';
   });
 
-  // comparsa allo scroll
+  // comparsa allo scroll: si ripete ogni volta che l'elemento rientra nello schermo
   const io = new IntersectionObserver(entries => entries.forEach(en => {
-    if (!en.isIntersecting) return;
-    en.target.classList.add('is-in');
-    en.target.querySelectorAll('[data-count]').forEach(count);
-    io.unobserve(en.target);
-  }), { threshold: 0.2 });
+    const el = en.target;
+    if (en.isIntersecting) {
+      if (el.classList.contains('is-in')) return;
+      el.classList.add('is-in');
+      el.querySelectorAll('[data-count]').forEach(count);
+    } else {
+      el.classList.remove('is-in');
+    }
+  }), { threshold: 0.15 });
   document.querySelectorAll('.reveal, .map').forEach((el, k) => {
     if (el.classList.contains('reveal')) el.style.transitionDelay = ((k % 3) * 0.08) + 's';
     io.observe(el);
