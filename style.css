@@ -178,13 +178,13 @@ h3{font-size:1.3rem}
 
 /* export: mezzo globo */
 .world{position:relative;overflow:hidden;background:var(--g-50);padding:110px 0}
-.world__in{display:grid;grid-template-columns:1fr 1.15fr;gap:48px;align-items:center}
+.world__in{display:grid;grid-template-columns:1fr 1.6fr;gap:48px;align-items:center}
 .world__text{padding-bottom:0}
 .world__text .btn{margin-top:32px}
-.world__globe{align-self:center;width:100%;max-width:600px;justify-self:center;filter:drop-shadow(0 30px 50px rgba(0,0,0,.08))}
+.world__globe{width:100%}
 .world__globe svg{display:block;width:100%;height:auto}
 .g-sea{stroke:none}
-.g-grat{fill:none;stroke:#d9d6d1;stroke-width:.6}
+.g-grat{fill:none;stroke:#e4e1dc;stroke-width:.5}
 .g-land{fill:#c4c1bb;stroke:#f6f5f3;stroke-width:.5}
 .g-ita{fill:var(--red)}
 .g-rim{fill:none;stroke:#d2cfca;stroke-width:1}
